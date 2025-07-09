@@ -1,0 +1,12 @@
+<h1>Micro Reddit</h1>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <%= link_to post.title, user_post_path(post.user_id,post) %>
+      <%= post.body%>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Select a User first to create a new post", users_path%>

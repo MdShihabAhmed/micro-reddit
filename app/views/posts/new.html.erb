@@ -1,0 +1,4 @@
+<h1>New Post</h1>
+<h3>as <%=link_to @user.username, user_path(@user)%></h3>
+
+<%= render "form", user: @user, post: @post%>

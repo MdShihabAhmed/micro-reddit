@@ -1,0 +1,10 @@
+<h1><%= @post.title %></h1>
+
+<p><%= @post.body %></p>
+<h4>Posted By: <%=link_to @user.username, user_path(@user)%></h4>
+
+<h3>Comments</h3>
+<%= render @post.comments %>
+
+<h3>Add a comment:</h3>
+<%= render "comments/form", post: @post, user: @user%>
