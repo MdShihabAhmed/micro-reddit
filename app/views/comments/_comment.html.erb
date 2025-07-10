@@ -1,4 +1,5 @@
 <p>
-  <strong><%= User.find(comment.user_id).username%>:</strong>
+  <%commenter = User.find(comment.user_id)%>
+  <strong><%= link_to commenter.username, user_path(commenter) %>:</strong>
   <%= comment.body %>
 </p>

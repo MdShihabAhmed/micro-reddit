@@ -1,9 +1,24 @@
 <%= form_with model: user do |form| %>
   <div>
     <%= form.label :username %><br>
-    <%= form.text_field :username %>
-    <% user.errors.full_messages_for(:username).each do |message| %>
-      <div><%= message %></div>
+    <%= form.text_field :username %><br>
+
+    <%= form.label :email %><br>
+    <%= form.email_field :email %><br>
+
+    <%= form.label :password %><br>
+    <%= form.password_field :password %>
+
+    <% if user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user creation:</h2>
+
+        <ul>
+        <% user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     <% end %>
   </div>
 
