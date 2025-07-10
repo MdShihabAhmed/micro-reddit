@@ -3,7 +3,10 @@
         <%= form.text_area :body %>
     </p>
     <p>
-        <%= form.submit %>
+        Comment as: <%= form.select :user_id, User.order(:username).map {|commenter| [commenter.username, commenter.id]} %>
+    </p>
+    <p>
+        <%= form.submit "comment"%>
     </p>
     
 <% end %>
