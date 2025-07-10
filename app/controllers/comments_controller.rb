@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.new(comment_params)
     @comment.user_id=params[:user_id]
     @comment.save
-    redirect_to user_post_path(@user,@post)
+    redirect_to user_post_path(@user, @post)
   end
 
   private
