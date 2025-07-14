@@ -1,4 +1,5 @@
 <%= form_with model: [ user,post, post.comments.build ] do |form| %> 
+        <%= form.hidden_field :user_id, value: current_user.id %>
     <p>
         <%= form.text_area :body %>
         <%= form.submit "comment"%>
