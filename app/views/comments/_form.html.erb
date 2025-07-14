@@ -1,8 +1,5 @@
 <%= form_with model: [ user,post, post.comments.build ] do |form| %> 
     <p>
-        Comment as: <%=  %>
-    </p>
-    <p>
         <%= form.text_area :body %>
         <%= form.submit "comment"%>
     </p>

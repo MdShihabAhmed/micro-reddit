@@ -11,7 +11,11 @@ class PostsController < ApplicationController
 
   def new
     @user = User.find(params[:user_id])
-    @post = @user.posts.new
+    if @user==current_user
+      @post = @user.posts.new
+    else
+      redirect_to root_path
+    end
   end
 
   def create
@@ -26,7 +30,11 @@ class PostsController < ApplicationController
 
   def edit
     @user = User.find(params[:user_id])
-    @post = @user.posts.find(params[:id])
+    if @user==current_user
+      @post = @user.posts.find(params[:id])
+    else
+      redirect_to root_path
+    end
   end
 
   def update
