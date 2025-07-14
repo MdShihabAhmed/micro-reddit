@@ -1,6 +1,6 @@
 <%= form_with model: [ user,post, post.comments.build ] do |form| %> 
     <p>
-        Comment as: <%= form.select :user_id, User.order(:username).map {|commenter| [commenter.username, commenter.id]} %>
+        Comment as: <%=  %>
     </p>
     <p>
         <%= form.text_area :body %>

@@ -10,6 +10,4 @@
   <% end %>
 </ul>
 <%# <%= render @user.posts%>
-<% if user_signed_in? && @user.id==current_user.id%>
-  <%= link_to "Create New Post", new_user_post_path(@user)%>
-<%end%>
+<%= link_to "Create New Post", new_user_post_path(@user)%>
